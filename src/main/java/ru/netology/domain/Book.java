@@ -14,10 +14,7 @@ public class Book extends Product {
         if (super.matches(search)) {
             return true;
         }
-        if (author.equalsIgnoreCase(search)) {
-            return true;
-        }
-        return false;
+        return author.equalsIgnoreCase(search);
     }
 
     @Override

@@ -1,9 +1,5 @@
 package ru.netology.domain;
 
-import ru.netology.layers.ProductRepository;
-import ru.netology.domain.Book;
-import ru.netology.domain.Smartphone;
-
 import java.util.Objects;
 
 public abstract class Product {
@@ -30,9 +26,7 @@ public abstract class Product {
     }
 
     public boolean matches(String search) {
-        if (name.matches(search)) {
-            return true;
-        } return false;
+        return name.matches(search);
     }
 
 

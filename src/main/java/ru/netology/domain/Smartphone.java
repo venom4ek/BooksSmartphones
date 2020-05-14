@@ -14,10 +14,7 @@ public class Smartphone extends Product {
         if (super.matches(search)) {
             return true;
         }
-        if (creator.equalsIgnoreCase(search)) {
-            return true;
-        }
-        return false;
+        return creator.equalsIgnoreCase(search);
     }
 
     @Override
