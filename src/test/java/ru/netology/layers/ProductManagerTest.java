@@ -26,7 +26,7 @@ public class ProductManagerTest {
         manager.add(book3);
         manager.add(phone2);
     }
-    
+
     @Test
     public void shouldSearchByBook() {
         Product[] actual = manager.searchBy("Булгаков");
