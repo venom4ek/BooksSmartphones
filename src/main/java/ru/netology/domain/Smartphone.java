@@ -10,8 +10,14 @@ public class Smartphone extends Product {
         this.creator = creator;
     }
 
-    public String getCreator() {
-        return creator;
+    public boolean matches(String search) {
+        if (super.matches(search)) {
+            return true;
+        }
+        if (creator.equalsIgnoreCase(search)) {
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -34,7 +40,7 @@ public class Smartphone extends Product {
                 "id=" + super.getId() + ", " +
                 "name=" + super.getName() + ", " +
                 "price=" + super.getPrice() + ", " +
-                //  "author=" + getBook() +
+                "creator=" + creator +
                 '}';
     }
 

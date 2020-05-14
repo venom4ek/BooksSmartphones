@@ -26,8 +26,7 @@ public class ProductManagerTest {
         manager.add(book3);
         manager.add(phone2);
     }
-
-
+    
     @Test
     public void shouldSearchByBook() {
         Product[] actual = manager.searchBy("Булгаков");
@@ -53,7 +52,7 @@ public class ProductManagerTest {
     }
 
     @Test
-    public void test() {
+    public void shouldStringToString() {
         Product expected = new Book(1, "Мастер и Маргарита", 250, "Булгаков");
         assertEquals(expected, book1);
     }
