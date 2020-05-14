@@ -1,8 +1,9 @@
-package ru.netology.layers;
+package ru.netology.manager;
 
 import ru.netology.domain.Book;
 import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
+import ru.netology.repository.ProductRepository;
 
 public class ProductManager {
     private ProductRepository repository;
@@ -37,7 +38,6 @@ public class ProductManager {
             if (book.getAuthor().equalsIgnoreCase(search)) {
                 return true;
             }
-            return false;
         }
         if (product instanceof Smartphone) {
             Smartphone smartphone = (Smartphone) product;
@@ -47,7 +47,6 @@ public class ProductManager {
             if (smartphone.getCreator().equalsIgnoreCase(search)) {
                 return true;
             }
-            return false;
         }
         return false;
     }

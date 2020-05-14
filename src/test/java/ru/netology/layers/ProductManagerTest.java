@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import ru.netology.domain.Book;
 import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
+import ru.netology.manager.ProductManager;
+import ru.netology.repository.ProductRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +19,6 @@ public class ProductManagerTest {
     private Product phone1 = new Smartphone(2, "6T", 25000, "OnePlus");
     private Product phone2 = new Smartphone(5, "test", 25000, "Берд");
 
-
     @BeforeEach
     public void manageAdd() {
         manager.add(book1);
@@ -26,7 +27,6 @@ public class ProductManagerTest {
         manager.add(book3);
         manager.add(phone2);
     }
-
 
     @Test
     public void shouldSearchByBook() {
@@ -53,9 +53,10 @@ public class ProductManagerTest {
     }
 
     @Test
-    public void test() {
-        Product expected = new Book(1, "Мастер и Маргарита", 250, "Булгаков");
-        assertEquals(expected, book1);
-    }
+    public void shouldSearchByWhenMissingProduct() {
+        Product[] actual = manager.searchBy("нет такого продукта");
+        Product[] expected = new Product[]{};
 
+        assertArrayEquals(expected, actual);
+    }
 }
